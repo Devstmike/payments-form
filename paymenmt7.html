@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="">
+        <h1>Get Started</h1>
+        <div>
+            <label for="">Name</label>
+            <input type="text" name="" id="">
+        </div>
+        <div>
+            <label for="">email</label>
+            <input type="text" name="" id="">
+        </div>
+        <div>
+            <label for="">Price</label>
+            <input type="text" name="" id="" value="$49">
+        </div>
+        <div>
+            <label for="">choose payment</label>
+            <select name="" id="choosePayment">
+                <option value="paypal">Paypal</option>
+                <!-- <option value="">stripe</option> -->
+                <option value="card" selected>Card</option>
+            </select>
+        </div>
+        <div class="cardPayment">
+            <div>
+                <label for="">Card Number</label>
+                <input type="text" name="" id="" value="">
+            </div>
+            <div class="wrapper">
+                <div>
+                    <label for="">Expiration Date</label>
+                    <input type="text" name="" id="" value="">
+                </div>
+                <div>
+                    <label for="">Cvc</label>
+                    <input type="text" name="" id="" value="">
+                </div>    
+            </div>
+        </div>
+        <button>pay</button>
+    </form>
+    <script>
+        let choosePaymentValue;
+        let cardPayment = document.querySelector(".cardPayment");
+        let choosePayment = document.getElementById("choosePayment");
+        choosePayment.onchange = () => {
+            choosePaymentValue = document.getElementById("choosePayment").value;
+            if(choosePaymentValue != "card" ){
+                cardPayment.classList.add("hidePayment")
+            }else{
+                cardPayment.classList.remove("hidePayment")
+            }
+        }
+    </script>
+</body>
+</html>
